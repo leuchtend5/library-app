@@ -1,0 +1,31 @@
+header {
+  background-color: #e1e2e3;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+  font-family: content-font;
+
+  nav {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    font-family: title-font;
+  }
+}
+
+a {
+  color: black;
+  text-decoration: none;
+
+  &:visited {
+    color: black;
+  }
+
+  &:hover {
+    color: white;
+  }
+}
