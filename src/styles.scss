@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: title-font;
+  src: url("../src/assets/fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: content-font;
+  src: url("../src/assets/fonts/Roboto-Light.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
