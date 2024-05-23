@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="card-container">
+    <div *ngFor="let book of books">
+      <app-card
+        [imageSrc]="book.image"
+        [title]="book.title"
+        [author]="book.author"
+        [year]="book.year"
+      ></app-card>
+    </div>
+  </div>
+
+  <div class="pagination">
+    <button (click)="previousPage()" [disabled]="page === 1">Previous</button>
+    <span>Page {{ page }}</span>
+    <button (click)="nextPage()" [disabled]="page * limit >= totalBooks">
+      Next
+    </button>
+  </div>
+</div>
