@@ -29,3 +29,24 @@ a {
     color: white;
   }
 }
+
+.search-input {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+
+  input {
+    border-radius: 4px;
+    padding: 4px;
+    border: 1px solid black;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
