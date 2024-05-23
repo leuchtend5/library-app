@@ -2,175 +2,175 @@
   "books": [
     {
       "id": 1,
-      "image": "assets/images/1",
+      "image": "assets/images/1.jpg",
       "title": "The 48 laws of power",
       "author": "Robert Greene and Joost Elffers",
       "year": "2000"
     },
     {
       "id": 2,
-      "image": "assets/images/2",
+      "image": "assets/images/2.jpg",
       "title": "It Ends With Us",
       "author": "Colleen Hoover",
       "year": "2016"
     },
     {
       "id": 3,
-      "image": "assets/images/3",
+      "image": "assets/images/3.jpg",
       "title": "Romancing Mister Bridgerton",
       "author": "Julia Quinn",
       "year": "2022"
     },
     {
       "id": 4,
-      "image": "assets/images/4",
+      "image": "assets/images/4.jpg",
       "title": "A Court of Mist and Fury",
       "author": "Sarah J. Maas",
       "year": "2016"
     },
     {
       "id": 5,
-      "image": "assets/images/5",
+      "image": "assets/images/5.jpg",
       "title": "The Psychology of Money",
       "author": "Morgan Housel",
       "year": "2020"
     },
     {
       "id": 6,
-      "image": "assets/images/6",
+      "image": "assets/images/6.jpg",
       "title": "The Subtle Art of Not Giving a Fuck",
       "author": "Mark Manson",
       "year": "2019"
     },
     {
       "id": 7,
-      "image": "assets/images/7",
+      "image": "assets/images/7.jpg",
       "title": "The Duke and I",
       "author": "Julia Quinn",
       "year": "2000"
     },
     {
       "id": 8,
-      "image": "assets/images/8",
+      "image": "assets/images/8.jpg",
       "title": "Save",
       "author": "Kasten Mona",
       "year": "2018"
     },
     {
       "id": 9,
-      "image": "assets/images/9",
+      "image": "assets/images/9.jpg",
       "title": "Icebreaker",
       "author": "Hannah Grace",
       "year": "2022"
     },
     {
       "id": 10,
-      "image": "assets/images/10",
+      "image": "assets/images/10.jpg",
       "title": "Thinking, fast and slow",
       "author": "Daniel Kahneman",
       "year": "2012"
     },
     {
       "id": 11,
-      "image": "assets/images/11",
+      "image": "assets/images/11.jpg",
       "title": "Twisted Love",
       "author": "Ana Huang",
       "year": "2021"
     },
     {
       "id": 12,
-      "image": "assets/images/12",
+      "image": "assets/images/12.jpg",
       "title": "Rich dad poor dad",
       "author": "Robert T. Kiyosaki and Sharon L. Lechter",
       "year": "2010"
     },
     {
       "id": 13,
-      "image": "assets/images/13",
+      "image": "assets/images/13.jpg",
       "title": "Think and Grow Rich",
       "author": "Napoleon Hill",
       "year": "1948"
     },
     {
       "id": 14,
-      "image": "assets/images/14",
+      "image": "assets/images/14.jpg",
       "title": "The Art of Seduction",
       "author": "Robert Greene and Joost Elffers",
       "year": "2000"
     },
     {
       "id": 15,
-      "image": "assets/images/15",
+      "image": "assets/images/15.jpg",
       "title": "The Power of Your Subconscious",
       "author": "Joseph Murphy",
       "year": "2013"
     },
     {
       "id": 16,
-      "image": "assets/images/16",
+      "image": "assets/images/16.jpg",
       "title": "Gentle Reminder",
       "author": "Bianca Sparacino",
       "year": "2020"
     },
     {
       "id": 17,
-      "image": "assets/images/17",
+      "image": "assets/images/17.jpg",
       "title": "The cruel prince",
       "author": "Holly Black, Caitlin Kelly, LitJoy Crate",
       "year": "2018"
     },
     {
       "id": 18,
-      "image": "assets/images/18",
+      "image": "assets/images/18.jpg",
       "title": "How to win friends and influence people",
       "author": "Dale Carnegie",
       "year": "1953"
     },
     {
       "id": 19,
-      "image": "assets/images/19",
+      "image": "assets/images/19.jpg",
       "title": "It Starts With Us",
       "author": "Colleen Hoover",
       "year": "2022"
     },
     {
       "id": 20,
-      "image": "assets/images/20",
+      "image": "assets/images/20.jpg",
       "title": "Push",
       "author": "Sapphire and Tayari Jones",
       "year": "1996"
     },
     {
       "id": 21,
-      "image": "assets/images/21",
+      "image": "assets/images/21.jpg",
       "title": "Atomic Habits",
       "author": "James Clear",
       "year": "2018"
     },
     {
       "id": 22,
-      "image": "assets/images/22",
+      "image": "assets/images/22.jpg",
       "title": "Control Your Mind and Master Your Feelings",
       "author": "Eric Robertson",
       "year": "2018"
     },
     {
       "id": 23,
-      "image": "assets/images/23",
+      "image": "assets/images/23.jpg",
       "title": "How to talk to anyone",
       "author": "Leil Lowndes",
       "year": "2003"
     },
     {
       "id": 24,
-      "image": "assets/images/24",
+      "image": "assets/images/24.jpg",
       "title": "Wonder",
       "author": "R. J. Palacio",
       "year": "2013"
     },
     {
       "id": 25,
-      "image": "assets/images/25",
+      "image": "assets/images/25.jpg",
       "title": "King of Sloth",
       "author": "Ana Huang",
       "year": "2024"
