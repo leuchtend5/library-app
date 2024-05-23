@@ -1,0 +1,59 @@
+.card-container {
+  background-color: white;
+  max-width: 350px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  font-family: content-font;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 10px 0px;
+    filter: brightness(95%);
+  }
+
+  img {
+    width: 100%;
+    object-fit: contain;
+    aspect-ratio: 1/1;
+  }
+
+  .book-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+
+    .title {
+      font-size: 1.2rem;
+    }
+
+    .author,
+    .year {
+      opacity: 0.6;
+    }
+  }
+
+  button {
+    padding: 6px 10px;
+    cursor: pointer;
+    background-color: black;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    width: fit-content;
+    margin-top: auto;
+
+    &:hover {
+      filter: brightness(90%);
+      background-color: grey;
+    }
+  }
+}
