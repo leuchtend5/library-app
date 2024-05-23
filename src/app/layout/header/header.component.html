@@ -1,9 +1,13 @@
 <header>
   <div class="title">Simple Library</div>
   <nav>
-    <a href="#">Home</a>
-    <input type="text" placeholder="Search book" />
-    <a href="#">Log in</a>
-    <a routerLink="/auth" routerLinkActive="active">Sign up</a>
+    <a routerLink="/" routerLinkActive="active">Home</a>
+    <div class="search-input">
+      <input type="text" placeholder="Search book" [(ngModel)]="query" />
+      <button (click)="searchData()"><mat-icon>search</mat-icon></button>
+    </div>
+    <a routerLink="/auth" routerLinkActive="active">Log in</a>
+    <a routerLink="/signup" routerLinkActive="active">Sign up</a>
+    <a routerLink="/" routerLinkActive="active">Sign out</a>
   </nav>
 </header>
