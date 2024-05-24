@@ -41,6 +41,17 @@
     }
   }
 
+  .button-container {
+    display: flex;
+    gap: 5px;
+    margin-top: auto;
+
+    & > * {
+      display: flex;
+      gap: 5px;
+    }
+  }
+
   button {
     padding: 6px 10px;
     cursor: pointer;
@@ -49,7 +60,6 @@
     border-radius: 6px;
     color: white;
     width: fit-content;
-    margin-top: auto;
 
     &:hover {
       filter: brightness(90%);

@@ -2,12 +2,29 @@
   <div class="title">Simple Library</div>
   <nav>
     <a routerLink="/" routerLinkActive="active">Home</a>
+    <a routerLink="/profile" routerLinkActive="active">Profile</a>
     <div class="search-input">
       <input type="text" placeholder="Search book" [(ngModel)]="query" />
       <button (click)="searchData()"><mat-icon>search</mat-icon></button>
     </div>
-    <a routerLink="/auth" routerLinkActive="active">Log in</a>
-    <a routerLink="/signup" routerLinkActive="active">Sign up</a>
-    <a routerLink="/" routerLinkActive="active">Sign out</a>
+    <a
+      routerLink="/login"
+      routerLinkActive="active"
+      *ngIf="checkToken() === true"
+      >Log in</a
+    >
+    <a
+      routerLink="/signup"
+      routerLinkActive="active"
+      *ngIf="checkToken() === true"
+      >Sign up</a
+    >
+    <a
+      routerLink="/"
+      routerLinkActive="active"
+      *ngIf="checkToken() === false"
+      (click)="signOut()"
+      >Sign out</a
+    >
   </nav>
 </header>

@@ -1,10 +1,1 @@
-{
-  "users": [
-    {
-      "id": "user-IGQA4gueeIiXxPdiSZG0y",
-      "username": "123",
-      "password": "$2b$10$wN.MLdRBdc7vR/7I475R2uE73vIgGZBzvsCWn4hwB8VJaGqElTVXu",
-      "fullname": "asd"
-    }
-  ]
-}
+{"users":[{"id":"xMwkU8rJraWfYN9hjTVSG","username":"123","password":"$2b$10$tUUfq0HF4xoxo8Om5P6HYulkF/x6WUioOoVoHsKdyAIOt31KX0X/i","fullname":"123"}]}

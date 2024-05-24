@@ -35,7 +35,7 @@ export class SignupComponent {
 
       this.http.post('http://localhost:3000/signup', userData).subscribe({
         next: () => {
-          this.route.navigate(['/auth']);
+          this.route.navigate(['/login']);
         },
         error: (error) => {
           if (error.status === 400 && error.error.message) {

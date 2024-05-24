@@ -8,6 +8,7 @@
         [title]="book.title"
         [author]="book.author"
         [year]="book.year"
+        (addToLibrary)="addBookHandler(book)"
       ></app-card>
     </div>
   </div>

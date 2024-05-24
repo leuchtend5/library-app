@@ -8,6 +8,7 @@ import {
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,11 @@ export class LoginComponent {
   isSubmitted = false;
   errorMessage = '';
 
-  constructor(private http: HttpClient, private route: Router) {
+  constructor(
+    private http: HttpClient,
+    private route: Router,
+    private auth: AuthService
+  ) {
     this.loginForm = new FormGroup({
       username: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required]),
@@ -32,18 +37,23 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       const userData = this.loginForm.value;
 
-      this.http.post('http://localhost:3000/auth', userData).subscribe({
-        next: (response) => {
-          console.log('success', response);
-          this.route.navigate(['/profile']);
-        },
-        error: (error) => {
-          console.log('error', error);
-          if (error.status === 400 && error.error.message) {
-            this.errorMessage = error.error.message;
-          }
-        },
-      });
+      this.http
+        .post<{ token: string; user: any }>(
+          'http://localhost:3000/auth',
+          userData
+        )
+        .subscribe({
+          next: (data) => {
+            this.auth.setToken(data.token);
+            this.route.navigate(['/profile']);
+          },
+          error: (error) => {
+            console.log('error', error);
+            if (error.status === 400 && error.error.message) {
+              this.errorMessage = error.error.message;
+            }
+          },
+        });
     }
   }
 

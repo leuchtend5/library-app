@@ -1,0 +1,38 @@
+<div class="sidebar">
+  <li (click)="fetchLibraryData()">My Library</li>
+</div>
+<div class="content">
+  <div class="info">
+    <div *ngIf="isLibraryAvailable === false">
+      There is no library in this account.
+      <button (click)="createLibrary()">Create Library</button>
+    </div>
+  </div>
+
+  <div *ngIf="totalBooks === 0 && isLibraryAvailable === true">
+    Your Library is empty.
+  </div>
+
+  <div class="content-container">
+    <div *ngFor="let book of paginatedBooks">
+      <app-card
+        [imageSrc]="book.image"
+        [title]="book.title"
+        [author]="book.author"
+        [year]="book.year"
+        [isInLibrary]="true"
+        (deleteFromLibrary)="deleteBookHandler(book)"
+        (editBookStatusFromLibrary)="editBookHandler(book)"
+        [status]="book.isRead"
+      ></app-card>
+    </div>
+  </div>
+
+  <div class="pagination">
+    <button (click)="previousPage()" [disabled]="page === 1">Previous</button>
+    <span>Page {{ page }}</span>
+    <button (click)="nextPage()" [disabled]="page * limit >= totalBooks">
+      Next
+    </button>
+  </div>
+</div>

@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { CardComponent } from '../../components/card/card.component';
 import { SharedService } from '../../services/shared.service';
+import { AuthService } from '../../services/auth.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-search-result',
@@ -20,7 +22,9 @@ export class SearchResultComponent implements OnInit {
 
   constructor(
     private sharedService: SharedService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private auth: AuthService,
+    private http: HttpClient
   ) {}
 
   ngOnInit(): void {
@@ -33,6 +37,33 @@ export class SearchResultComponent implements OnInit {
     this.books = this.sharedService.getSearchData();
     this.totalBooks = this.books.length;
     this.paginateBooks();
+  }
+
+  addBookHandler(book: any) {
+    const userId = this.auth.getUserId();
+    const token = this.auth.getToken();
+
+    if (userId && token) {
+      const httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+          'user-id': `${userId}`,
+        }),
+      };
+
+      const data = {
+        book,
+        userId,
+      };
+
+      this.http
+        .post('http://localhost:3000/library/books', data, httpOptions)
+        .subscribe((data) => {
+          console.log(data);
+        });
+    }
+    return;
   }
 
   paginateBooks() {

@@ -5,5 +5,13 @@
     <div class="author">{{ author }}</div>
     <div class="year">{{ year }}</div>
   </div>
-  <button>Add to library</button>
+  <div class="button-container">
+    <button (click)="postBookToLibrary(book)">Add to library</button>
+    <div *ngIf="isInLibrary === true">
+      <button (click)="editBookStatus(book)">
+        {{ status ? "Unread" : "Read" }}
+      </button>
+      <button (click)="deleteBookToLibrary(book)">Delete</button>
+    </div>
+  </div>
 </div>

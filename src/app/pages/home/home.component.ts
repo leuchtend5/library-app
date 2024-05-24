@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from '../../components/card/card.component';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -16,10 +17,37 @@ export class HomeComponent implements OnInit {
   limit: number = 8;
   totalBooks: number = 0;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private auth: AuthService) {}
 
   ngOnInit(): void {
     this.fetchData();
+  }
+
+  addBookHandler(book: any) {
+    const userId = this.auth.getUserId();
+    const token = this.auth.getToken();
+
+    if (userId && token) {
+      const httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+          'user-id': `${userId}`,
+        }),
+      };
+
+      const data = {
+        book,
+        userId,
+      };
+
+      this.http
+        .post('http://localhost:3000/library/books', data, httpOptions)
+        .subscribe((data) => {
+          console.log(data);
+        });
+    }
+    return;
   }
 
   fetchData() {
