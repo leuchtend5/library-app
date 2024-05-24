@@ -49,7 +49,7 @@ export class LoginComponent {
           },
           error: (error) => {
             console.log('error', error);
-            if (error.status === 400 && error.error.message) {
+            if (error.status === 401 && error.error.message) {
               this.errorMessage = error.error.message;
             }
           },
