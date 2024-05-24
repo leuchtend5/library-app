@@ -23,17 +23,20 @@ const loginHandler = async (req, res) => {
     );
 
     if (!user) {
-      return res.status(400).json({ message: "Invalid username or password" });
+      return res.status(401).json({ message: "Invalid username or password" });
     }
 
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
-      return res.status(400).json({ message: "Invalid username or password" });
+      return res.status(401).json({ message: "Invalid username or password" });
     }
 
     const token = createAccessToken(user);
     res.setHeader("Authorization", `Bearer ${token}`);
-    res.status(200).json({ token, user });
+    res.status(201).json({
+      status: "success",
+      data: { token, user },
+    });
   });
 };
 
@@ -41,7 +44,9 @@ const verifyToken = (req, res, next) => {
   const token = req.headers["authorization"];
 
   if (!token) {
-    return res.status(403).send("You don't have access to this action.");
+    return res
+      .status(403)
+      .json({ message: "You don't have access to this action." });
   }
 
   try {

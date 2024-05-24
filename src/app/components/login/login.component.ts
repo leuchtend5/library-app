@@ -38,13 +38,13 @@ export class LoginComponent {
       const userData = this.loginForm.value;
 
       this.http
-        .post<{ token: string; user: any }>(
+        .post<{ data: any; token: string; user: any }>(
           'http://localhost:3000/auth',
           userData
         )
         .subscribe({
           next: (data) => {
-            this.auth.setToken(data.token);
+            this.auth.setToken(data.data.token);
             this.route.navigate(['/profile']);
           },
           error: (error) => {

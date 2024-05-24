@@ -7,6 +7,10 @@ const addUserHandler = async (req, res) => {
   const id = nanoid();
   const hashedPassword = await bcrypt.hash(password, 10);
 
+  if (!username || !password || !fullname) {
+    return res.status(400).json({ message: "Bad Request" });
+  }
+
   fs.readFile("src/server/userData.json", "utf8", (err, data) => {
     if (err) {
       console.log(err);
@@ -40,7 +44,10 @@ const addUserHandler = async (req, res) => {
           return;
         }
 
-        res.status(201).json(newUser);
+        res.status(201).json({
+          status: "success",
+          data: newUser,
+        });
       }
     );
   });

@@ -15,6 +15,7 @@ const searchHandler = (req, res) => {
     );
 
     res.json({
+      status: "success",
       books: filteredBooks,
     });
   });
@@ -35,8 +36,7 @@ const getBookHandler = (req, res) => {
     const paginated = books.books.slice(startIndex, endIndex);
 
     res.json({
-      page,
-      limit,
+      status: "success",
       books: paginated,
       totalBooks: books.books.length,
     });

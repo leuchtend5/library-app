@@ -1,5 +1,5 @@
 <div class="container">
-  <div *ngIf="paginatedBooks.length === 0">No books found.</div>
+  <div class="info" *ngIf="paginatedBooks.length === 0">No books found.</div>
 
   <div class="card-container">
     <div *ngFor="let book of paginatedBooks">

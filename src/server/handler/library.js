@@ -33,7 +33,7 @@ const postLibrary = (req, res) => {
     const checkLibrary = libraries.some((library) => library.userId === userId);
 
     if (checkLibrary) {
-      return res.json({ message: "You already have a library" });
+      return res.status(400).json({ message: "You already have a library" });
     }
 
     const newLibrary = {
@@ -77,7 +77,9 @@ const addBookToLibrary = (req, res) => {
 
     const checkBook = userLibrary.book.find((data) => data.id === book.id);
     if (checkBook) {
-      return res.json({ message: "This book is already in your library" });
+      return res
+        .status(400)
+        .json({ message: "This book is already in your library" });
     }
 
     userLibrary.book.push(book);
@@ -121,7 +123,9 @@ const deleteBookFromLibrary = (req, res) => {
     if (bookIndex !== -1) {
       userLibrary.book.splice(bookIndex, 1);
     } else {
-      return res.json({ message: "Book not found in your library" });
+      return res
+        .status(404)
+        .json({ message: "Book not found in your library" });
     }
 
     fs.writeFile(
@@ -162,7 +166,9 @@ const putBookStatus = (req, res) => {
     if (bookIndex !== -1) {
       userLibrary.book[bookIndex].isRead = !userLibrary.book[bookIndex].isRead;
     } else {
-      return res.json({ message: "Book not found in your library" });
+      return res
+        .status(404)
+        .json({ message: "Book not found in your library" });
     }
 
     fs.writeFile(
